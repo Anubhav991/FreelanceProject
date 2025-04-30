@@ -21,7 +21,7 @@ app.use(session({
     secret: "Abhayislove1234",
     resave: true,
     saveUninitialized: true,
-    store: MongoStore.create({ mongoUrl: "mongodb://127.0.0.1:27017/freelance",collectionName: "sessions" }),
+    store: MongoStore.create({ mongoUrl: "mongodb+srv://anubhav22aug:<db_password>@cluster0.pah3non.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",collectionName: "sessions" }),
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 365 * 100 } 
 }));
 const sessionMiddleware = session({
