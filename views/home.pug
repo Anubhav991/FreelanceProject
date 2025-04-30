@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Freelance Website 
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        style 
+            include ../static/style1.css
+    body 
+        nav#navbar
+            ul#ul1
+                li #[a(href = "/Home") Home]
+                li #[a(href ="/Hire") Hire]
+                li #[a(href ="/FindWork") Find Work]
+                li #[a(href ="/ContactUs") Contact Us]
+            ul#ul2
+                li #[a(href = "/dashboard") Dashboard]
+                li #[a(href = "/Logout") Logout]
+                li #[a(href ="/Hire") Post a Project]
+        div.container
+            div.bgvid
+                <video autoplay loop muted plays-inline class = "backgroundvid">
+                <source src = '..\static\bgv.mp4' type = "video/mp4" >
+                </video>
+            div.content
+                h1.h1.c Freelancing Made Easy, Hustling Made Profitable
+                h2.bd1 "Empowering Freelancers, Connecting Businesses"
+                p.bd1.c   Welcome to <strong>ANULANCE</strong> the ultimate platform where talent meets opportunity. 
+                p Whether you're a freelancer looking for work or a business searching for skilled professionals, we make freelancing seamless and profitable.
+                p  Work on your terms. Get paid securely. Grow your career.
+                ul#ul3
+                    li #[a(href = "/FindWork") Find Work]
+                    li #[a(href = "/Signup") Get started ]
+        section#section1
+            div#content1
+                h1 Why select us ?
+                ol
+                    li <strong> Seamless Hiring & Job Search </strong>– Instantly connect with skilled freelancers or find projects that match your expertise.
+                    li  <strong>Secure Payments</strong> – Get paid safely with our escrow system, ensuring trust and transparency for both parties.
+                    li <strong> Flexible Work </strong> – Work from anywhere, anytime, on projects that align with your skills and passion.
+                    li  <strong>Grow Your Brand</strong> – Build your freelance reputation, showcase your portfolio, and scale your career.
+                    li <strong>Trusted by Professionals</strong> – Join a thriving community of freelancers and businesses worldwide.
+        section#section2
+            h1 How it works ?
+            div#content2
+                ul#ul21
+                    h2 For Freelancers
+                    li Create a Profile
+                    li Find Work
+                    li Get Hired and Paid 
+                ul#ul22
+                    h2 For Buisnesses
+                    li  Post a project
+                    li  Review Proposals
+                    li  Get Work done

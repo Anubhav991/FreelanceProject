@@ -1,0 +1,144 @@
+extends base1.pug 
+
+block style 
+    style 
+        include ../static/dashboard.css
+        include ../static/navbar1.css
+
+block content
+    section#dash1
+        h1 Welcome to your dashboard, #{user.firstname} #{user.surname}
+        section#dash2
+            // Display Profile Picture
+            article#darticle
+                img#profilePicture(src=(user.profilePic || "../uploads/default.png") alt="Profile Picture") 
+                p Username: #{user.username}
+                p Email: #{user.email}
+                section#dsection
+                    form(action="/uploadPfp" method="POST" enctype="multipart/form-data")
+                        input#pfp(type="file" name="pfp" accept="image/*" required)
+                        button(type="submit") Update Profile Picture
+                    section#profile-info
+                        h1 About me
+                        p My bio  : #{dashboard.bio}
+                        p My job description : #{dashboard.jobDescription}
+                        p My job category : #{dashboard.jobCategory} 
+
+            section#projects
+                if dashboard && dashboard.pastProjects.length > 0
+                    h2 My Projects
+                    div#project-container
+                        each project, index in dashboard.pastProjects
+                            div.project-item(data-index=index, style=(index === 0 ? "display:block" : "display:none"))
+                                if project.match(/\.(jpeg|jpg|png|gif)$/)
+                                    img(src=project, alt="Project Image", onerror="this.onerror=null; this.src='../uploads/nonefound.png'")
+                                button(onclick=`deleteProject('${project}')`) Delete
+                    div#navbutton
+                        button#prev-btn(onclick="prevProject()") ⬅️ 
+                        button#next-btn(onclick="nextProject()") ➡️
+                else
+                    p No past projects uploaded yet 
+
+        form(action="/updateDashboard" method="POST" enctype="multipart/form-data")
+            h2 Edit Profile
+            label(for="bio") Bio:
+            textarea#bio(name="bio") #{dashboard.bio}
+
+            label(for="jobCategory") Job Category:
+            select#jobCategory(name="jobCategory")
+                option(value="web-development") Web Development
+                option(value="mobile-app-development") Mobile App Development
+                option(value="software-development") Software Development
+                option(value="game-development") Game Development
+                option(value="data-science") Data Science & AI/ML
+                option(value="cybersecurity") Cybersecurity
+                option(value="blockchain") Blockchain Development
+                option(value="graphic-design") Graphic Design
+                option(value="ui-ux") UI/UX Design
+                option(value="animation") Animation & Motion Graphics
+                option(value="video-editing") Video Editing
+                option(value="illustration") Illustration
+                option(value="3d-modeling") 3D Modeling & Rendering
+                option(value="copywriting") Copywriting
+                option(value="technical-writing") Technical Writing
+                option(value="blog-writing") Blog & Article Writing
+                option(value="ghostwriting") Ghostwriting
+                option(value="scriptwriting") Scriptwriting
+                option(value="translation") Translation & Localization
+                option(value="seo-marketing") SEO & Digital Marketing
+                option(value="social-media") Social Media Management
+                option(value="email-marketing") Email Marketing
+                option(value="lead-generation") Lead Generation
+                option(value="affiliate-marketing") Affiliate Marketing
+                option(value="advertising") Advertising & PPC
+                option(value="accounting") Accounting & Bookkeeping
+                option(value="consulting") Business Consulting
+                option(value="financial-analysis") Financial Analysis
+                option(value="virtual-assistance") Virtual Assistance
+                option(value="market-research") Market Research
+                option(value="legal-consulting") Legal Consulting
+                option(value="cad") CAD & Product Design
+                option(value="mechanical-engineering") Mechanical Engineering
+                option(value="electrical-engineering") Electrical Engineering
+                option(value="civil-engineering") Civil Engineering
+                option(value="industrial-design") Industrial Design
+
+            label(for="jobDescription") Job Description:
+            textarea#jobDescription(name="jobDescription") #{dashboard.jobDescription}
+
+            label(for="projects") Upload Past Projects (Images/Videos):
+            input#projects(type="file" name="projects" accept="image/*,video/*" multiple)
+
+            button#bt1(type="submit") Edit Profile
+
+    script.
+        async function deleteProject(projectPath) {
+            console.log("Deleting project:", projectPath);
+            if (!projectPath) {
+                console.error("Project path is undefined");
+                return; 
+            }
+
+            const encodedPath = encodeURIComponent(projectPath);
+
+            const response = await fetch(`/deleteProject?path=${encodedPath}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                console.log("Project deleted successfully");
+                location.reload(); // Refresh the page after deletion
+            } else {
+                console.error("Error deleting project:", await response.text());
+            }
+        }
+
+
+        let currentProjectIndex = 0;
+        let projects = [];
+
+        function showProject(index) {
+            document.querySelectorAll(".project-item").forEach((item, i) => {
+                item.style.display = i === index ? "block" : "none";
+            });
+            currentProjectIndex = index;
+        }
+
+        function nextProject() {
+            if (currentProjectIndex < projects.length - 1) {
+                showProject(currentProjectIndex + 1);
+            }
+        }
+
+        function prevProject() {
+            if (currentProjectIndex > 0) {
+                showProject(currentProjectIndex - 1);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            projects = Array.from(document.querySelectorAll(".project-item"));
+            if (projects.length > 0) {
+                showProject(0);
+            }
+        });

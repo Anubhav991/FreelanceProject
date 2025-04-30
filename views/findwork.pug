@@ -1,0 +1,23 @@
+extends base1.pug 
+block style 
+    style 
+        include ../static/navbar1.css
+        include ../static/findwork.css
+block content
+    section#findsection1
+        H1 Jobs Available
+            .job-container
+               each job in jobs
+                 .job-card
+                   h2= job.jobCategory
+                   p Description: #{job.desc}
+                   p Price: ₹#{job.price}
+                   p Posted by: #{job.userID.username}
+                   if job.userID._id.toString() === currentUserId
+                     form(method="POST", action=`/deleteJob/${job._id}`)
+                       button(type="submit") 🗑️ Delete
+                   else
+                     form(method="POST", action=`/interested/${job._id}`)
+                       button(type="submit") ⭐ Interested
+                       a(href=`/chat/${job.userID._id}`) 💬 Chat
+                     

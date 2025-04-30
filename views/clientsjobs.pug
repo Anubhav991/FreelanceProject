@@ -1,0 +1,21 @@
+extends base1.pug 
+block style 
+    style 
+        include ../static/navbar1.css
+        include ../static/clientsjobs.css
+block content
+    section#findsection1
+        h1 Your Posted Jobs and Interested Freelancers
+        .job-container
+            each job in jobs
+              .job-card
+                h2= job.jobCategory
+                p Description: #{job.desc}
+                p Price: ₹#{job.price}
+                h3 Interested Freelancers:
+    
+                ul
+                  each interest in interests
+                    if interest.jobId.toString() === job._id.toString()
+                      li
+                        a(href=`/freelancerDashboard/${interest.freelancerId._id}`)= interest.freelancerId.username

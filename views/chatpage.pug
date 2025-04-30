@@ -1,0 +1,47 @@
+extends base1.pug
+
+block style
+  style
+    include ../static/chatpage.css
+    include ../static/navbar1.css
+
+block content
+  header
+    h2 Chat
+
+  #chat-container
+    ul#messages
+    form#chat-form
+      input#msg(type="text", placeholder="Type your message..." required)
+      button(type="submit") Send
+  script(src="/socket.io/socket.io.js")
+  script.
+    const socket = io();
+    const chatId = "#{chatId}";
+  
+    socket.emit("joinRoom", chatId);
+  
+    const form = document.getElementById("chat-form");
+    const input = document.getElementById("msg");
+    const messages = document.getElementById("messages");
+  
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const messageText = input.value.trim();
+      if (messageText) {
+        socket.emit("chat message", {
+          chatId,
+          text: messageText // don't send username
+        });
+        input.value = "";
+      }
+    });
+  
+    socket.on('chat message', (data) => {
+      const li = document.createElement('li');
+      const isOwn = data.sender?.trim().toLowerCase() === "#{loggedInUser.username}".trim().toLowerCase();
+      li.className = 'message ' + (isOwn ? 'own' : 'other');
+      li.textContent = `${data.sender}: ${data.content}`;
+      messages.appendChild(li);
+      messages.scrollTop = messages.scrollHeight;
+    });

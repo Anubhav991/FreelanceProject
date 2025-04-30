@@ -1,0 +1,38 @@
+extends base1.pug 
+
+block style 
+    style 
+        include ../static/freelancerdashboard.css
+        include ../static/navbar1.css
+
+block content
+    section#section1
+        h1 Freelancer Dashboard
+        .dashboard-grid
+            if freelancer
+                .profile
+                    img(src=freelancer.profilePic, alt="Profile Picture", width="150")
+                    h2= `${freelancer.firstname} ${freelancer.surname}`
+                    p Username: #{freelancer.username}
+                    p Email: #{freelancer.emailid}
+                    p Phone: #{freelancer.phoneno}
+                    p Category: #{freelancerdashboard.jobCategory}
+                    p Description: #{freelancerdashboard.jobDescription}
+                    p Bio: #{freelancerdashboard.bio}
+                .project-gallery
+                    if freelancerdashboard.pastProjects && freelancerdashboard.pastProjects.length
+                      h3 Past Projects:
+                      ul
+                        each file in freelancerdashboard.pastProjects
+                          li
+                            if file.endsWith('.jpg') || file.endsWith('.png') || file.endsWith('.jpeg')
+                              img(src=file, width="200")
+                            else
+                              a(href=file, target="_blank") View File
+                    else
+                      p No past projects uploaded.
+            form(action=`/checkout/${freelancer._id}`, method="POST")
+                <button class='bt1' ,type="submit"> Accept & Pay </button>
+            form(action=`/chat/${freelancer._id}`, method="GET")
+                <button class='bt1' ,type="submit"> Chat with freelancer</button>
+            

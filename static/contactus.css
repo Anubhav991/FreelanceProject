@@ -1,0 +1,63 @@
+#form1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 100px;
+}
+#form1 input{
+    padding-top: 20px;
+    width: 500px;
+    padding-bottom: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+#bt1 {
+    margin-top: 50px;
+    height: 60px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: #ff4da6;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#bt1:hover {
+    background-color: #ff1a8c;  /* Darker pink */
+    box-shadow: 0 0 15px rgba(255, 77, 166, 0.8); /* Glow effect */
+    transform: scale(1.1);  /* Slightly enlarge */
+}
+#sectioncontactus h1{
+    font-size: 40px;
+}
+.bgvid1{
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    z-index: -1;
+    display: flex;
+}
+.backgroundvid1{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 100%;
+}
+.bgvid::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(42, 25, 110, 0.3);
+}
+input::placeholder {
+    font-size: 18px; /* Increase placeholder font size */
+    text-align: center; /* Center placeholder */
+    color: #999; /* Optional: Adjust color */
+}  

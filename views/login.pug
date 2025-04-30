@@ -1,0 +1,17 @@
+extends base.pug 
+block style 
+    style 
+        include ../static/style1.css
+        include ../static/login.css
+block content
+    section#sectioncontactus
+        div.bgvid1
+                <video autoplay loop muted plays-inline class = "backgroundvid1">
+                <source src = '..\static\videoplayback.mp4' type = "video/mp4" >
+                </video>
+        h1 Log In
+        form(id = "form1" , action="/login" ,method="POST")
+            <input type="text" name="username" placeholder="Enter your username">
+            <input type="password" name="password" placeholder="Enter your password">
+            P If you dont have an account please #[a(href="/Signup") Sign Up] first 
+            <button id = "bt1" , type="submit">Submit</button>

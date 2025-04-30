@@ -1,0 +1,52 @@
+extends base1.pug 
+block style 
+    style 
+        include ../static/navbar1.css
+        include ../static/hire.css
+block content
+    section#sectionc
+        div.content-wrapper
+            h1 What needs to be done ?
+            h3 Tell us about the job details 
+            form(id = "form1" , action="/hire" ,method="POST")
+                <input type="text" name="desc" placeholder="Enter the description">
+                <input type="number" name="price" placeholder="Enter the price you want to offer INR">
+                label(for="jobCategory") <h3>Select job category</h3> ;
+                select(name="jobCategory" id="jobCategory")
+                    option(value="web-development") Web Development
+                    option(value="mobile-app-development") Mobile App Development
+                    option(value="software-development") Software Development
+                    option(value="game-development") Game Development
+                    option(value="data-science") Data Science & AI/ML
+                    option(value="cybersecurity") Cybersecurity
+                    option(value="blockchain") Blockchain Development
+                    option(value="graphic-design") Graphic Design
+                    option(value="ui-ux") UI/UX Design
+                    option(value="animation") Animation & Motion Graphics
+                    option(value="video-editing") Video Editing
+                    option(value="illustration") Illustration
+                    option(value="3d-modeling") 3D Modeling & Rendering
+                    option(value="copywriting") Copywriting
+                    option(value="technical-writing") Technical Writing
+                    option(value="blog-writing") Blog & Article Writing
+                    option(value="ghostwriting") Ghostwriting
+                    option(value="scriptwriting") Scriptwriting
+                    option(value="translation") Translation & Localization
+                    option(value="seo-marketing") SEO & Digital Marketing
+                    option(value="social-media") Social Media Management
+                    option(value="email-marketing") Email Marketing
+                    option(value="lead-generation") Lead Generation
+                    option(value="affiliate-marketing") Affiliate Marketing
+                    option(value="advertising") Advertising & PPC
+                    option(value="accounting") Accounting & Bookkeeping
+                    option(value="consulting") Business Consulting
+                    option(value="financial-analysis") Financial Analysis
+                    option(value="virtual-assistance") Virtual Assistance
+                    option(value="market-research") Market Research
+                    option(value="legal-consulting") Legal Consulting
+                    option(value="cad") CAD & Product Design
+                    option(value="mechanical-engineering") Mechanical Engineering
+                    option(value="electrical-engineering") Electrical Engineering
+                    option(value="civil-engineering") Civil Engineering
+                    option(value="industrial-design") Industrial Design
+                <button id = "bt1" , type="submit">Post</button> 

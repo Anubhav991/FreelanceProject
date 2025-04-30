@@ -1,0 +1,94 @@
+#findsection1{
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../static/alexander-andrews-fsH1KjbdjE8-unsplash.jpg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+h1 {
+    text-shadow: none !important;
+  }
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+    margin-top: 30px;
+  }
+  .job-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+    justify-content: center;
+}
+  
+  /* Each individual card */
+  .job-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: #e0e0e0;
+    border-radius: 15px;
+    padding: 20px 25px;
+    width: 280px;
+    box-shadow: 0 8px 30px rgba(0, 255, 230, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+.job-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 35px rgba(0, 255, 230, 0.3);
+}
+  
+  /* Job title */
+  .job-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  /* Description, price, poster info */
+  .job-card p {
+    margin: 8px 0;
+    color: #cccccc;
+    font-size: 0.95rem;
+  }
+  
+  /* Buttons */
+  .job-card form {
+    margin-top: 15px;
+  }
+  
+  .job-card button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Delete button style */
+  .job-card button[type="submit"]:contains("Delete") {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  /* Interested button style */
+  .job-card button[type="submit"]:contains("Interested") {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .job-card button:hover {
+    opacity: 0.9;
+  }

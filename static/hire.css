@@ -1,0 +1,81 @@
+#sectionc {
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: center; /* Center vertically */
+    background-image: url('../static/star.jpeg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    padding-left: 200px; /* Moves content slightly from the left edge */
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the left */
+}
+input::placeholder {
+    font-size: 18px; /* Increase placeholder font size */
+    text-align: center; /* Center placeholder */
+    color: #999; /* Optional: Adjust color */
+}
+#sectionc h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#form1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns form elements to the left */
+    gap: 15px; /* Adds spacing between elements */
+}
+
+#form1 input {
+    width: 500px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+#bt1 {
+    margin-top: 20px;
+    height: 60px;
+    width: 120px;
+    border-radius: 20px;
+    background-color: #ff4da6;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+#bt1:hover {
+    background-color: #e60073;
+    transform: scale(1.1);
+}
+select {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#jobList {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+#jobList li {
+    background: #f4f4f4;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+.content-wrapper  h3{
+    color: #f4f4f4;
+}

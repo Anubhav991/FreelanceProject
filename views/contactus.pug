@@ -1,0 +1,18 @@
+extends base1.pug 
+block style 
+    style 
+        include ../static/navbar1.css
+        include ../static/contactus.css
+block content
+    section#sectioncontactus
+        div.bgvid1
+                <video autoplay loop muted plays-inline class = "backgroundvid1">
+                <source src = '..\static\videoplayback.mp4' type = "video/mp4" >
+                </video>
+        h1 Contact Us
+        form(id = "form1" , action="/contactus" ,method="POST")
+            <input type="text" name="username" placeholder="Enter username">
+            <input type="email" name="emailid" placeholder="Enter your email id ">
+            <input type="phone" name="phone" placeholder="Enter your phone no.">
+            <input type="text" name="desc" placeholder="Enter your concern">
+            <button id = "bt1" , type="submit">Submit</button>
