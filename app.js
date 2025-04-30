@@ -14,8 +14,8 @@ app.use(express.static('public'));
 
 main().catch(err => console.log(err));
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/freelance');
-}
+  await mongoose.connect('mongodb+srv://anubhav22aug:<db_password>@cluster0.pah3non.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+}   
 const port = process.env.PORT|| 80;
 app.use(session({
     secret: "Abhayislove1234",
