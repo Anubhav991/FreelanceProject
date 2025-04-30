@@ -14,14 +14,14 @@ app.use(express.static('public'));
 
 main().catch(err => console.log(err));
 async function main() {
-  await mongoose.connect('mongodb+srv://anubhav22aug:<db_password>@cluster0.pah3non.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+  await mongoose.connect('mongodb+srv://anubhav22aug:E3WfhvWw7NSs2kXx@cluster0.pah3non.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 }   
 const port = process.env.PORT|| 80;
 app.use(session({
     secret: "Abhayislove1234",
     resave: true,
     saveUninitialized: true,
-    store: MongoStore.create({ mongoUrl: "mongodb+srv://anubhav22aug:<db_password>@cluster0.pah3non.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",collectionName: "sessions" }),
+    store: MongoStore.create({ mongoUrl: "mongodb+srv://anubhav22aug:E3WfhvWw7NSs2kXx@cluster0.pah3non.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",collectionName: "sessions" }),
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 365 * 100 } 
 }));
 const sessionMiddleware = session({
