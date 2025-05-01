@@ -53,9 +53,9 @@ io.on("connection", (socket) => {
   });
 }); 
 //SIGNUP PAGE
-app.get("/Signup", (req, res) => {
-    res.status(200).render('signup.pug');
-}); 
+app.get('/signup', (req, res) => {
+    res.render('signup', { query: req.query });
+  });
 
 const SignupSchema = new mongoose.Schema({
     firstname: String,
@@ -77,7 +77,7 @@ app.post("/Signup", async (req, res) => { // Make function async
         const existingUser1 = await Signup.findOne({ phoneno: userinfo.phoneno });
         const existingUser2 = await Signup.findOne({ emailid: userinfo.email }); // Use await
         if (existingUser || existingUser1 || existingUser2) {
-            return res.send('User already exists, please try another username.');
+            return res.redirect('/signup?error=exists');
         }
         // Save new user
         const saltrounds = 10;
@@ -91,10 +91,9 @@ app.post("/Signup", async (req, res) => { // Make function async
     }
 });
 
-
 //LOGIN PAGE
 app.get("/Login", (req,res)=>{
-    res.status(200).render('login.pug');
+    res.status(200).render('login.pug',{ query: req.query });
 })
 const LoginSchema = new mongoose.Schema({
     username: String,
@@ -106,7 +105,7 @@ app.post("/Login", async (req, res) => {
         // Find user in the database
         const check = await Signup.findOne({ username: req.body.username });
         if (!check) {
-            return res.send('User cannot be found');
+            return res.redirect('/login?error=exists');
         }
         // Compare hashed password from database
         const isPasswordMatch = await bcrypt.compare(req.body.password, check.password);
@@ -121,8 +120,8 @@ app.post("/Login", async (req, res) => {
             await req.session.save();
             res.redirect('/dashboard'); // Redirect to homepage
         } else {
-            res.send("Wrong password, bro.");
-        }
+            return res.redirect('/login?error=exist');
+        }   
     } catch (error) {
         console.error(error);
         res.status(500).send("An error occurred. Please try again.");

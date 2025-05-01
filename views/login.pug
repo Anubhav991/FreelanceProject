@@ -15,3 +15,9 @@ block content
             <input type="password" name="password" placeholder="Enter your password">
             P If you dont have an account please #[a(href="/Signup") Sign Up] first 
             <button id = "bt1" , type="submit">Submit</button>
+        if query.error === 'exists'
+          script.
+            alert('User cannot be found.');
+        if query.error === 'exist'
+          script.
+            alert('Wrong password bro');
