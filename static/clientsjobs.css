@@ -92,3 +92,118 @@ h1 {
   .job-card button:hover {
     opacity: 0.9;
   }
+/* Base Styles (already present in your code) */
+
+/* Media Queries for Responsiveness */
+
+/* Small Screens (Mobile) */
+@media (max-width: 767px) {
+  #findsection1 {
+      padding: 20px;
+      background-size: cover;
+  }
+
+  h1 {
+      font-size: 1.5rem;
+      margin-top: 20px;
+  }
+
+  .job-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+  }
+
+  .job-card {
+      width: 100%;
+      max-width: 320px;
+      padding: 15px;
+  }
+
+  .job-card h2 {
+      font-size: 1.1rem;
+  }
+
+  .job-card p {
+      font-size: 0.85rem;
+  }
+
+  .job-card button {
+      padding: 6px 10px;
+      font-size: 0.8rem;
+  }
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  #findsection1 {
+      padding: 30px;
+  }
+
+  h1 {
+      font-size: 1.75rem;
+      margin-top: 25px;
+  }
+
+  .job-container {
+      gap: 20px;
+      padding: 20px;
+  }
+
+  .job-card {
+      width: 45%;
+      max-width: 400px;
+      padding: 20px;
+  }
+
+  .job-card h2 {
+      font-size: 1.2rem;
+  }
+
+  .job-card p {
+      font-size: 0.9rem;
+  }
+
+  .job-card button {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+  }
+}
+
+/* Large Screens (Desktops) */
+@media (min-width: 1025px) {
+  #findsection1 {
+      height: 100vh;
+      padding: 40px;
+  }
+
+  h1 {
+      font-size: 2rem;
+      margin-top: 30px;
+  }
+
+  .job-container {
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px;
+      justify-content: center;
+  }
+
+  .job-card {
+      width: 280px;
+      padding: 20px 25px;
+  }
+
+  .job-card h2 {
+      font-size: 1.25rem;
+  }
+
+  .job-card p {
+      font-size: 0.95rem;
+  }
+
+  .job-card button {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+  }
+}

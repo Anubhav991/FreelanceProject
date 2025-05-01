@@ -102,3 +102,66 @@
     background-color: #e60073;
     transform: scale(1.1);
 }
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    justify-items: center;
+  }
+
+  .profile,
+  .project-gallery {
+    width: 80%;
+    max-width: 500px;
+  }
+
+  .project-gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  .bt1 {
+    margin-left: 0;
+    width: 60%;
+    max-width: 200px;
+    height: auto;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  #section1 {
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .profile img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile {
+    padding: 15px;
+  }
+
+  .project-gallery h3 {
+    font-size: 18px;
+  }
+
+  .bt1 {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  ul {
+    font-size: 14px;
+  }
+}

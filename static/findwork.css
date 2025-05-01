@@ -98,3 +98,72 @@ h1 {
 .job-card button:hover {
   opacity: 0.9;
 }
+@media (max-width: 1024px) {
+  .job-container {
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .job-card {
+    width: 45%;
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .job-card {
+    width: 100%;
+  }
+
+  .job-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+
+  .job-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .job-card p {
+    font-size: 0.9rem;
+  }
+
+  .job-card button, .job-card a {
+    font-size: 0.85rem;
+    padding: 7px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .job-card {
+    padding: 15px;
+    width: 100%;
+  }
+
+  .job-card h2 {
+    font-size: 1rem;
+  }
+
+  .job-card p {
+    font-size: 0.85rem;
+  }
+
+  .job-card button, .job-card a {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+}

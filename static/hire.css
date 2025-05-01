@@ -79,3 +79,71 @@ select {
 .content-wrapper  h3{
     color: #f4f4f4;
 }
+@media (max-width: 1024px) {
+    #sectionc {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        text-align: center;
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .content-wrapper {
+        align-items: center;
+    }
+
+    #form1 {
+        align-items: center;
+    }
+
+    #form1 input,
+    select {
+        width: 80%;
+        max-width: 400px;
+    }
+
+    #bt1 {
+        width: 60%;
+        max-width: 200px;
+    }
+
+    #sectionc h1 {
+        font-size: 26px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    #sectionc {
+        padding: 40px 10px;
+    }
+
+    #form1 input,
+    select {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #bt1 {
+        font-size: 14px;
+        padding: 10px;
+        height: auto;
+    }
+
+    #sectionc h1 {
+        font-size: 22px;
+    }
+
+    input::placeholder {
+        font-size: 14px;
+    }
+
+    #jobList li {
+        font-size: 14px;
+    }
+
+    .content-wrapper h3 {
+        font-size: 16px;
+    }
+}

@@ -195,3 +195,144 @@ p{
 #dash1 form input{
     height:50px;
 }
+/* Base Styles (already present in your code) */
+
+/* Media Queries for Responsiveness */
+
+/* Small Screens (Mobile) */
+@media (max-width: 767px) {
+    #dash1 {
+        min-height: auto;
+        padding: 20px;
+    }
+    
+    .profile-container, .edit-profile, .about-me, .past-projects {
+        width: 100%;
+        max-width: none;
+        padding: 15px;
+    }
+
+    #profilePicture {
+        width: 100px;
+        height: 100px;
+    }
+
+    button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    input, select, textarea {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    /* Adjust text visibility styles */
+    h1, p, label, .about-me, .past-projects, select, option, input, textarea {
+        font-size: 1rem;
+    }
+
+    #dsection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #profile-info {
+        width: 100%;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    #darticle, #projects {
+        width: 100%;
+        margin-right: 0;
+        padding: 15px;
+    }
+
+    #projects {
+        height: auto;
+        padding-left: 10px;
+    }
+
+    #projects img, video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+    .profile-container, .edit-profile, .about-me, .past-projects {
+        width: 90%;
+        max-width: 800px;
+    }
+
+    #profilePicture {
+        width: 110px;
+        height: 110px;
+    }
+
+    input, select, textarea {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #profile-info {
+        font-size: 1.4rem;
+    }
+
+    #darticle, #projects {
+        width: 90%;
+    }
+
+    #projects {
+        height: auto;
+    }
+
+    #projects img, video {
+        width: 80%;
+        height: auto;
+    }
+}
+
+/* Large Screens (Desktops) */
+@media (min-width: 1025px) {
+    #dash1 {
+        min-height: 100vh;
+        padding: 40px;
+    }
+
+    .profile-container, .edit-profile, .about-me, .past-projects {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    #profilePicture {
+        width: 120px;
+        height: 120px;
+    }
+
+    button {
+        width: auto;
+        margin-left: 50%;
+    }
+
+    #profile-info {
+        width: 500px;
+        font-size: 1.5rem;
+    }
+
+    #darticle, #projects {
+        width: 500px;
+    }
+
+    #projects img, video {
+        width: 450px;
+        height: 250px;
+    }
+}

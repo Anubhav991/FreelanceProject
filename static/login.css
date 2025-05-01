@@ -1,17 +1,24 @@
-#form1{
+#form1 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding-top: 100px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
 }
-#form1 input{
-    padding-top: 20px;
-    width: 500px;
-    padding-bottom: 20px;
+
+#form1 input {
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
     margin: 10px;
     border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
+
 #bt1 {
     margin-top: 50px;
     height: 60px;
@@ -27,26 +34,31 @@
 }
 
 #bt1:hover {
-    background-color: #ff1a8c;  /* Darker pink */
-    box-shadow: 0 0 15px rgba(255, 77, 166, 0.8); /* Glow effect */
-    transform: scale(1.1);  /* Slightly enlarge */
+    background-color: #ff1a8c;
+    box-shadow: 0 0 15px rgba(255, 77, 166, 0.8);
+    transform: scale(1.1);
 }
-#sectioncontactus h1{
+
+#sectioncontactus h1 {
     font-size: 40px;
+    text-align: center;
 }
-.bgvid1{
+
+.bgvid1 {
     position: absolute;
     top: 0;
     overflow: hidden;
     z-index: -1;
     display: flex;
 }
-.backgroundvid1{
+
+.backgroundvid1 {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
     opacity: 60%;
 }
+
 .bgvid::after {
     content: "";
     position: absolute;
@@ -56,11 +68,38 @@
     height: 100%;
     background: rgba(42, 25, 110, 0.3);
 }
+
 input::placeholder {
-    font-size: 18px; /* Increase placeholder font size */
-    text-align: center; /* Center placeholder */
-    color: #999; /* Optional: Adjust color */
+    font-size: 18px;
+    text-align: center;
+    color: #999;
 }
-#sectioncontactus a{
+
+#sectioncontactus a {
     color: #ff1a8c;
+}
+
+/* ✅ Responsive Media Queries */
+@media (max-width: 600px) {
+    #form1 {
+        padding-top: 60px;
+    }
+
+    #form1 input {
+        width: 100%;
+        max-width: 100%;
+        font-size: 16px;
+        padding: 16px;
+    }
+
+    #bt1 {
+        width: 80%;
+        max-width: 200px;
+        font-size: 15px;
+        height: 50px;
+    }
+
+    #sectioncontactus h1 {
+        font-size: 28px;
+    }
 }
