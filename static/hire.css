@@ -3,27 +3,30 @@
     justify-content: flex-start; /* Align to the left */
     align-items: center; /* Center vertically */
     background-image: url('../static/star.jpeg');
-    background-size: cover;
-    background-position: bottom;
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
     background-repeat: no-repeat;
-    height: 100vh;
-    width: 100%;
-    padding-left: 200px; /* Moves content slightly from the left edge */
+    height: 100vh; /* Ensures it covers full viewport height */
+    width: 100%; /* Ensures it takes full width */
+    padding-left: 20px; /* Adjust padding for better responsiveness */
 }
 
 .content-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligns items to the left */
+    align-items: center; /* Aligns items to the left */
 }
+
 input::placeholder {
     font-size: 18px; /* Increase placeholder font size */
     text-align: center; /* Center placeholder */
     color: #999; /* Optional: Adjust color */
 }
+
 #sectionc h1 {
     font-size: 30px;
     margin-bottom: 20px;
+    color: #fff; /* Ensure text is visible on background */
 }
 
 #form1 {
@@ -53,10 +56,12 @@ input::placeholder {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
+
 #bt1:hover {
     background-color: #e60073;
     transform: scale(1.1);
 }
+
 select {
     width: 200px;
     padding: 10px;
@@ -76,74 +81,32 @@ select {
     margin: 5px 0;
     border-radius: 5px;
 }
-.content-wrapper  h3{
+
+.content-wrapper h3 {
     color: #f4f4f4;
 }
-@media (max-width: 1024px) {
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
     #sectionc {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 0;
-        text-align: center;
-        height: auto;
-        padding: 50px 20px;
+        padding-left: 15px; /* Adjust padding for smaller screens */
+        background-position: center; /* Ensure the background stays centered */
     }
 
-    .content-wrapper {
-        align-items: center;
-    }
-
-    #form1 {
-        align-items: center;
-    }
-
-    #form1 input,
-    select {
-        width: 80%;
-        max-width: 400px;
+    #form1 input {
+        width: 100%; /* Make the form inputs take full width */
     }
 
     #bt1 {
-        width: 60%;
-        max-width: 200px;
+        width: 100%; /* Make button take full width */
     }
 
-    #sectionc h1 {
-        font-size: 26px;
-        text-align: center;
-    }
-}
-
-@media (max-width: 600px) {
-    #sectionc {
-        padding: 40px 10px;
-    }
-
-    #form1 input,
     select {
-        width: 100%;
-        font-size: 14px;
+        width: 100%; /* Make select dropdown take full width */
     }
 
-    #bt1 {
-        font-size: 14px;
-        padding: 10px;
-        height: auto;
-    }
-
+    /* Ensure h1 is readable on smaller screens */
     #sectionc h1 {
-        font-size: 22px;
-    }
-
-    input::placeholder {
-        font-size: 14px;
-    }
-
-    #jobList li {
-        font-size: 14px;
-    }
-
-    .content-wrapper h3 {
-        font-size: 16px;
+        font-size: 24px;
     }
 }

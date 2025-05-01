@@ -4,15 +4,31 @@ html
     title Freelance Website 
     block style 
   body
+    body
     nav#navbar1
-            ul#ul11
-                li #[a(href = "/Home") Home]
-                li #[a(href ="/Hire") Hire]
-                li #[a(href ="/FindWork") Find Work]
-                li #[a(href ="/ContactUs") Contact Us]
-            ul#ul21
-                li #[a(href = "/clientsjobs") My Jobs]
-                li #[a(href = "/dashboard") Dashboard]
-                li #[a(href = "/Logout") Logout]
-                li #[a(href ="/Hire") Post a Project]
-    block content 
+      button.menu-toggle(onclick="toggleMenu()") ☰
+      ul#ul11.menu-items
+        li
+          a(href="/Home") Home
+        li
+          a(href="/Hire") Hire
+        li
+          a(href="/FindWork") Find Work
+        li
+          a(href="/ContactUs") Contact Us
+      ul#ul21.menu-items
+        li
+          a(href="/clientsjobs") My Jobs
+        li
+          a(href="/dashboard") Dashboard
+        li
+          a(href="/Logout") Logout
+        li
+          a(href="/Hire") Post a Project
+    block content
+
+  script.
+    function toggleMenu() {
+      const navbar = document.getElementById('navbar1');
+      navbar.classList.toggle('active');
+    } 
